@@ -1,7 +1,7 @@
 (function() {
   d3.fisheye = function() {
-    var radius = 200,
-        power = 2,
+    var radius = 150,
+        power = 1.5,
         k0,
         k1,
         center = [0, 0];
