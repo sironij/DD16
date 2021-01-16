@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-  var width = 1200,
-    height = 800,
+
+  //Grid d3
+
+  var width = 2000,
+    height = 1200,
     xStepsBig = d3.range(10, width, 20),
     yStepsBig = d3.range(10, height, 20),
     xStepsSmall = d3.range(0, width + 6, 6),
