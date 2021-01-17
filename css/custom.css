@@ -26,6 +26,7 @@ svg {
   left:0%;
   height:100%;
   z-index: 0;
+  cursor: url('cursor.png') 50 50, auto;
 }
 
 p {
