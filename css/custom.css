@@ -135,7 +135,6 @@ h2 {
   height: 100vh;
 }
 
-
 .title {
   order: 3;
   margin-left: 2em;
@@ -164,7 +163,7 @@ h2 {
   margin: 1em;
 }
 
-#empty{
+#empty {
   flex-grow: 1;
 }
 
@@ -175,48 +174,44 @@ h2 {
   text-align: center;
 }
 
-.visualizzazione{
-    position: absolute;
- 
-}
-#my_dataviz{
-    left:20%;
-    position: absolute;
-    width: 70vw;
-    height: 70vh;
-    top:40%;
+.visualizzazione {
+  position: absolute;
 }
 
+#my_dataviz {
+  left: 20%;
+  position: absolute;
+  width: 70vw;
+  height: 70vh;
+  top: 40%;
+}
 
-    .bottone {
-      width: 10vw;
-      border: solid;
-      border-color: black;
-      margin: 4px;
-        cursor: pointer
-    }
+.bottone {
+  width: 10vw;
+  border: solid;
+  border-color: black;
+  margin: 4px;
+  cursor: pointer
+}
 
-    .desc{
-     
-      border: solid;
-      border-color: black;
-      margin: 4px;
-      width: 80vw;
-      height: 10vh;
-    }
+.desc {
+  border: solid;
+  border-color: black;
+  margin: 4px;
+  width: 80vw;
+  height: 10vh;
+}
 
-    .proj{
-      position: absolute;
-      width: 5vh;
-      height: 5vh;
-      border-radius: 100%;
-    }
+.proj {
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 100%;
+}
 
-    .circ{
-      stroke: black ;
-    }
-
-    
+.circ {
+  stroke: black;
+}
 
 .button a {
   color: black;
@@ -240,4 +235,43 @@ h2 {
 
 .infographic p {
   margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  #countdown {
+    font-size: 3.5em;
+    left: 65%;
+  }
+
+  #text p {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .title {
+    margin-left: 1.5em;
+  }
+
+
+    #home_logo {
+      margin-left: 1.5em;
+    }
+
+  #home_logo img {
+    max-width: 4em;
+  }
+
+
+
+  .footer {
+    display: none;
+  }
 }
