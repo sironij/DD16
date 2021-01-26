@@ -2,7 +2,7 @@
 
     // console.log("Robert's got a quick hand");
     let width = window.innerWidth,
-    height = window.innerHeight-300,
+    height = window.innerHeight-600,
     padding = window.innerWidth * 0.05; 
     console.log("ciao funzia")
         let svg = d3.select('#my_dataviz').append('svg')

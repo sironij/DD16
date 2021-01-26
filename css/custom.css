@@ -175,6 +175,49 @@ h2 {
   text-align: center;
 }
 
+.visualizzazione{
+    position: absolute;
+ 
+}
+#my_dataviz{
+    left:20%;
+    position: absolute;
+    width: 70vw;
+    height: 70vh;
+    top:40%;
+}
+
+
+    .bottone {
+      width: 10vw;
+      border: solid;
+      border-color: black;
+      margin: 4px;
+        cursor: pointer
+    }
+
+    .desc{
+     
+      border: solid;
+      border-color: black;
+      margin: 4px;
+      width: 80vw;
+      height: 10vh;
+    }
+
+    .proj{
+      position: absolute;
+      width: 5vh;
+      height: 5vh;
+      border-radius: 100%;
+    }
+
+    .circ{
+      stroke: black ;
+    }
+
+    
+
 .button a {
   color: black;
   margin-block-start: 0;
