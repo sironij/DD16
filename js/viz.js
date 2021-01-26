@@ -222,8 +222,8 @@ d3.csv("js/density.csv").then(data => {
 
   d3.selectAll('.bottone').on('click', function() {
     // console.log("But he's coming for you, yeah, he's coming for you")
-      d3.selectAll('.bottone').classed(".filter-active",false)
-      d3.select(this).classed(".filter-active",true)
+      d3.selectAll('.bottone').classed("filter-active",false)
+      d3.select(this).classed("filter-active",true)
 
       
     data_setX = this.id;
