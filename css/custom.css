@@ -180,7 +180,6 @@ h2 {
   border-left: 4px solid #403EFF;
 }
 
-
 #empty {
   flex-grow: 1;
 }
@@ -217,7 +216,6 @@ h2 {
 }
 
 .visualizzazione {
-  background-color: red;
   width: 100vw;
 }
 
@@ -226,9 +224,15 @@ h2 {
   height: 100%;
 }
 
-.infographic p {
-  margin: auto;
+#infopoetry {
+  position: absolute;
+  top: 90%;
+  left: 86%;
+  z-index: 2;
+  background-color: white;
 }
+
+
 
 @media only screen and (max-width: 768px) {
   h1 {

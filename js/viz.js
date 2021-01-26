@@ -227,7 +227,7 @@ d3.csv("js/density.csv").then(data => {
 
       
     data_setX = this.id;
-      
+
 
 
     simulation.force('y', d3.forceY(function(d) {
