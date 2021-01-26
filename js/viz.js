@@ -222,7 +222,12 @@ d3.csv("js/density.csv").then(data => {
 
   d3.selectAll('.bottone').on('click', function() {
     // console.log("But he's coming for you, yeah, he's coming for you")
+      d3.selectAll('.bottone').removeClass(".filter-active")
+      d3.select(this).addClass(".filter-active")
+
+      
     data_setX = this.id;
+      
 
 
     simulation.force('y', d3.forceY(function(d) {
