@@ -180,7 +180,6 @@ h2 {
   border-left: 4px solid #403EFF;
 }
 
-
 #empty {
   flex-grow: 1;
 }
@@ -226,9 +225,7 @@ h2 {
   height: 100%;
 }
 
-.infographic p {
-  margin: auto;
-}
+
 
 @media only screen and (max-width: 768px) {
   h1 {
