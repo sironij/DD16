@@ -12,25 +12,14 @@ body {
   pointer-events: all;
 }
 
-  .banner-bottom {
-    display:none;
-  }
+.banner-bottom {
+  display: none;
+}
 
 path {
   fill: none;
   stroke: white;
   stroke-width: 0.5;
-}
-
-svg {
-  hyphens: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  height: 100%;
-  z-index: 0;
-  cursor: url('cursor.png') 50 50, auto;
 }
 
 p {
@@ -79,7 +68,7 @@ h2 {
 
 #home_logo {
   position: absolute;
-  top: 8%;
+  margin-top: 3em;
   margin-left: 2em;
   z-index: 1;
 }
@@ -164,8 +153,33 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1em;
+  margin: 1em 2em 1em 2em;
 }
+
+.bottone {
+  font-family: "andret_tblight";
+  cursor: pointer;
+  border-left: 4px solid grey;
+  padding-left: 0.5em;
+}
+
+#filter {
+  width: 10%;
+  margin-top: 1em;
+  line-height: 2em;
+}
+
+#filter a{
+  color: black;
+  margin-block-start:0;
+  margin-block-end:0;
+}
+
+.filter-active {
+  text-decoration: underline;
+  border-left: 4px solid #403EFF;
+}
+
 
 #empty {
   flex-grow: 1;
@@ -174,47 +188,8 @@ h2 {
 .button {
   border: 2px solid black;
   padding: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 0.5em;
   text-align: center;
-}
-
-.visualizzazione {
-  position: absolute;
-}
-
-#my_dataviz {
-  left: 20%;
-  position: absolute;
-  width: 70vw;
-  height: 70vh;
-  top: 40%;
-}
-
-.bottone {
-  width: 10vw;
-  border: solid;
-  border-color: black;
-  margin: 4px;
-  cursor: pointer
-}
-
-.desc {
-  border: solid;
-  border-color: black;
-  margin: 4px;
-  width: 80vw;
-  height: 10vh;
-}
-
-.proj {
-  position: absolute;
-  width: 5vh;
-  height: 5vh;
-  border-radius: 100%;
-}
-
-.circ {
-  stroke: black;
 }
 
 .button a {
@@ -223,18 +198,32 @@ h2 {
   margin-block-end: 0;
 }
 
-.home {
-  flex: 1 0 auto;
+#gwork {
+  background-color: black;
+  color: white;
 }
 
-.infographic {
+#gwork a {
+  color: white;
+}
+
+.home {
+  flex: 1 0 auto;
   display: flex;
-  margin: auto;
-  height: 80%;
-  width: 80%;
-  background-color: grey;
-  text-align: center;
-  align-items: center;
+  flex-direction: row;
+  margin-left: 2em;
+  margin-right: 2em;
+  font-family: "andret_tblight"
+}
+
+.visualizzazione {
+  background-color: red;
+  width: 100vw;
+}
+
+#my_dataviz svg {
+  width: 100%;
+  height: 100%;
 }
 
 .infographic p {
@@ -251,7 +240,7 @@ h2 {
   }
 
   #banner {
-    order:1;
+    order: 1;
   }
 
   #countdown {
@@ -273,7 +262,7 @@ h2 {
   }
 
   .banner-bottom {
-    display:block;
+    display: block;
     order: 3;
     overflow: hidden;
     background-color: black;
@@ -283,10 +272,9 @@ h2 {
     flex-grow: 0;
   }
 
-
-    #home_logo {
-      margin-left: 1.5em;
-    }
+  #home_logo {
+    margin-left: 1.5em;
+  }
 
   #home_logo img {
     max-width: 4em;
