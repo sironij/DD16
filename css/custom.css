@@ -12,6 +12,10 @@ body {
   pointer-events: all;
 }
 
+  .banner-bottom {
+    display:none;
+  }
+
 path {
   fill: none;
   stroke: white;
@@ -246,18 +250,37 @@ h2 {
     font-size: 1em;
   }
 
+  #banner {
+    order:1;
+  }
+
   #countdown {
     font-size: 3.5em;
-    left: 65%;
+    left: 67.5%;
+    margin-top: 0;
   }
 
   #text p {
     margin: 0;
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
   .title {
+    order: 2;
     margin-left: 1.5em;
+    padding-bottom: 0;
+    padding-top: 80%;
+  }
+
+  .banner-bottom {
+    display:block;
+    order: 3;
+    overflow: hidden;
+    background-color: black;
+    z-index: 10;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    flex-grow: 0;
   }
 
 
@@ -268,8 +291,6 @@ h2 {
   #home_logo img {
     max-width: 4em;
   }
-
-
 
   .footer {
     display: none;
