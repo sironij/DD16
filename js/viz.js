@@ -19,8 +19,12 @@ let x = d3.scaleOrdinal()
 
 let x1 = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
-  .range([0 + padding,((width/9)*Math.random()*2) + padding, ((width/9)*Math.random()*4)  + padding, ((width/9)*Math.random()*6)  + padding, ((width/9)*Math.random()*8)  + padding, ((width/9)*Math.random()*10)  + padding, ((width/9)*Math.random()*6)  + padding, ((width/9)*Math.random()*7)  + padding, ((width/9)*Math.random()*5) + padding]);
+  .range([0 + padding,rnd((width/9)) + padding, rnd(width)  + padding, rnd((width/9)*2)  + padding, rnd((width/9)*3)  + padding, rnd((width/9)*4)  + padding, rnd((width/9)*5) + padding, rnd((width/9)*6)  + padding, rnd((width/9)*7) + padding]);
 
+
+function rnd( max) {
+  return Math.random() * (max);
+}
 
 // starting visualization with:
 
@@ -28,7 +32,7 @@ let data_setX = "group";
 
 let y1 = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
-  .range([100,500,150,450,200,400,250,350,300]);
+  .range([height/9,height/9*1.5,height/9*3,height/9*4.5,height/9*6,hieght/9*7.5,height,350,300]);
 
 var tooltip = d3.select("body").append("div")   
     .attr("class", "tooltip");
