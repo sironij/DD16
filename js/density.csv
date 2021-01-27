@@ -7,7 +7,7 @@ Group5,phase1,e,5,images/img5.jpg
 Group6,phase1,f,6,images/img6.jpg
 Group7,phase1,g,7,images/img7.jpg
 Group8,phase1,h,8,images/img8.jpg
-Group9,phase1,i,9,images/img9.jpg
+Group9,phase1,i,9,images/img9.png
 Group1,phase2,l,10,images/img10.jpg
 Group2,phase2,m,11,images/img11.jpg
 Group3,phase2,n,12,images/img12.jpg
@@ -16,7 +16,7 @@ Group5,phase2,p,14,images/img14.jpg
 Group6,phase2,q,15,images/img15.jpg
 Group7,phase2,r,16,images/img16.jpg
 Group8,phase2,s,17,images/img17.jpg
-Group9,phase2,t,18,images/img18.jpg
+Group9,phase2,t,18,images/img18.png
 Group1,phase3,u,19,images/img19.jpg
 Group2,phase3,v,20,images/img20.jpg
 Group3,phase3,z,21,images/img21.jpg
@@ -25,4 +25,4 @@ Group5,phase3,bb,23,images/img23.jpg
 Group6,phase3,cc,24,images/img24.jpg
 Group7,phase3,dd,25,images/img25.jpg
 Group8,phase3,ee,26,images/img26.jpg
-Group9,phase3,ff,27,images/img27.jpg
+Group9,phase3,ff,27,images/img27.png

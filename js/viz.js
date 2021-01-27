@@ -1,4 +1,4 @@
-// console.log("Robert's got a quick hand");
+
 let ch = window.innerHeight / 100;
 let cw = window.innerWidth / 100;
 let height = 80 * ch;
@@ -9,63 +9,17 @@ let svg = d3.select('#my_dataviz').append('svg')
   .attr('width', width)
   .attr('height', height)
 
-
-// console.log("He's got a rolled cigarette")
-
-
 let colors = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
   .range(["red", "green", "blue", "yellow", "orange", "pink", "cyan", "grey", "magenta"]);
 
-// console.log("Hanging out his mouth, he's a cowboy kid")
-///////////// Scale point
-
-// let configPhase = ({
-//   domain: ["phase1","phase2","phase3"],
-//   paddingpoints: 5,
-//   round: true,
-//   range: [0+padding, width-padding] /
-// })
-// let configGroup = ({
-//   domain: ["Group1","Group2","Group3","Group4","Group5","Group6","Group7","Group8","Group9"], //
-//   paddingpoints: 10,
-//   round: true,
-//   range: [0+padding, 200, 600, width-padding]
-// })
-
-// let x = d3.scalePoint()
-// .domain(configPhase.domain)
-// .range(configPhase.range)
-// .padding(configPhase.paddingpoints)
-// .round(configPhase.round)
-
-///////////// Scale point
-
 let x = d3.scaleOrdinal()
   .domain(["phase1", "phase2", "phase3"])
-  .range([20 + padding, 700 + padding, 400 + padding]);
+  .range([0 + padding, ((width/3)*3) + padding,((width/3)*1.5) + padding]);
 
 let x1 = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
-  .range([0 + padding, 100 + padding, 200 + padding, 300 + padding, 400 + padding, 500 + padding, 600 + padding, 700 + padding, 800 + padding]);
-// let x1 = d3.scaleLinear()
-// .range([0+ padding, width - padding]);
-
-// let x2 = d3.scaleLog()
-// .range([0 + padding, width - padding]);
-
-
-// let y0 = d3.scalePoint()
-// .domain( function(d) {
-//   console.log(d.data)
-//   return d.data } )
-
-// Dichiarazione assi
-// let phaseAxis = d3.axisBottom(x).tickFormat(d3.format(".0s")).tickSize(height - 20);
-// let groupAxis = d3.axisBottom(x1).tickSize(height - 20);
-
-
-// let locationAxis = d3.axisLeft(y2).ticks().tickSize(width - window.innerWidth * 0.15).tickPadding(10);
+  .range([0 + padding,((width/9)*Math.random()*2) + padding, ((width/9)*Math.random()*4)  + padding, ((width/9)*Math.random()*6)  + padding, ((width/9)*Math.random()*8)  + padding, ((width/9)*Math.random()*10)  + padding, ((width/9)*Math.random()*6)  + padding, ((width/9)*Math.random()*7)  + padding, ((width/9)*Math.random()*5) + padding]);
 
 
 // starting visualization with:
@@ -74,11 +28,16 @@ let data_setX = "group";
 
 let y1 = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
-  .range([100, 500, 150, 450, 200, 400, 250, 350, 300]);
+  .range([100,500,150,450,200,400,250,350,300]);
+
+var tooltip = d3.select("body").append("div")   
+    .attr("class", "tooltip");
+
+
+
+
 
 // Parse dataset
-// console.log("In his dad's closet, in a box of fun things")
-
 d3.csv("js/density.csv").then(data => {
 
   // dichiarare asse x e asse y
@@ -97,6 +56,7 @@ d3.csv("js/density.csv").then(data => {
         return d.y
       })
 
+
   };
   x.domain(d3.extent(data, function(d) {
     // console.log(d.phase)
@@ -107,14 +67,7 @@ d3.csv("js/density.csv").then(data => {
     // console.log(d.group)
     return d.group;
   }));
-  // Draw axes
-
-  // svg.append("g")
-  // .call(dateAxis)
-  // .classed("xAxis", true);
-
-
-
+  
   // Draw circles
 
   svg.selectAll('.circ')
@@ -136,44 +89,19 @@ d3.csv("js/density.csv").then(data => {
     .call(d3.drag() // call specific function when circle is dragged
       .on("start", dragstarted)
       .on("drag", dragged)
-      .on("end", dragended))
-
-  //fill with image
-  // var defs = svg.append('svg:defs');
-
-
-
-  //           svg.selectAll('.circ')
-  //           .data(data)
-  //           .enter()
-  //           .append('circle').classed('circ', true)
-  //           .attr('r', 15)
-  //           .attr('cx', function(d){
-  //             // console.log(x(d.phase))
-  //             return x1(d.group); })
-  //           .attr('cy', function(d){ return y1(d.group); })
-
-  //           .attr("background-image", function(d) {
-  //             return "url("+"'"+d.img+"'+)" ;})
-  //             .call(d3.drag() // call specific function when circle is dragged
-  //             .on("start", dragstarted)
-  //             .on("drag", dragged)
-  //             .on("end", dragended))
-
-
-  // .style("fill", "#fff")
-  // .style("fill", "url(#grump_avatar" + i + ")");
-
-
-
-
-
-
-
-  d3.selectAll(".circ").on("mouseenter", hover)
-  d3.selectAll(".circ").on("mouseleave", outer)
-
-
+      .on("end", dragended));
+       
+    d3.selectAll(".circ")
+    .on("mouseover", function(d) {   
+    console.log("tooltip" + tooltip)
+    tooltip.html(d)  
+      .style("left", (d3.event.pageX) + "px")     
+      .style("top", (d3.event.pageY - 28) + "px")
+      .style("opacity", 100);
+  })                  
+  .on("mouseout", function(d) {       
+    tooltip.style("opacity", 0);   
+  });
 
 
   // Start force layout
@@ -189,7 +117,7 @@ d3.csv("js/density.csv").then(data => {
     .force('y', d3.forceY(function(d) {
       return y1(d.group)
     }).strength(0.80))
-    .force('collide', d3.forceCollide(30)
+    .force('collide', d3.forceCollide(25)
       .iterations(32))
     .alphaDecay(0)
     .alpha(0.1)
@@ -259,55 +187,27 @@ d3.csv("js/density.csv").then(data => {
 
 })
 
-let tooltip = d3.select("#tooltip").style("opacity", 1)
-
-
-function hover(d) {
-
-
-  d3.selectAll(".circ").style("opacity", 0.2)
-  d3.select(this).style("opacity", 1)
 
 
 
-  tooltip.append("p")
-    .text("The project for " + d.phase)
+var chartDiv = document.getElementsByClassName("visualizzazione");
 
-  tooltip.append("p")
-    .text("by " + d.group)
+function redraw(){
+console.log("ridisegno")
+        // Extract the width and height that was computed by CSS.
+        var width2 = chartDiv.clientWidth;
+        var height2 = chartDiv.clientHeight;
 
-  tooltip.append("p")
-    .text("is titled " + d.title)
+        // Use the extracted size to set the size of an SVG element.
+        svg
+          .attr("width", width2)
+          .attr("height", height2);
 
-}
+        // Draw an X to show that the size is correct.
+       
+      }
 
-function outer() {
+ redraw();
 
-  d3.selectAll(".circ").style("opacity", 1)
-  d3.selectAll("#tooltip p").remove()
-}
-var config = {
-  "avatar_size": 10 //define the size of teh circle radius
-}
-// data.forEach(function(d, i) {
-//   defs.append("svg:pattern")
-//     .attr("id", "grump_avatar" + i)
-//     .attr("width", config.avatar_size)
-//     .attr("height", config.avatar_size)
-//     .attr("patternUnits", "userSpaceOnUse")
-//     .append("svg:image")
-//     .attr("xlink:href", d.img)
-//     .attr("width", config.avatar_size)
-//     .attr("height", config.avatar_size)
-//     .attr("x", 0)
-//     .attr("y", 0);
-
-//   var circle = svg.append("circle")
-//     .attr("transform", "translate(" + d.posx + "," + d.posy + ")")
-//     .attr("cx", config.avatar_size / 2)
-//     .attr("cy", config.avatar_size / 2)
-//     .attr("r", config.avatar_size / 2)
-//     .style("fill", "#fff")
-//     .style("fill", "url(#grump_avatar" + i + ")");
-
-// })
+      // Redraw based on the new size whenever the browser window is resized.
+      window.addEventListener("resize", redraw);

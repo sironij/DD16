@@ -18,7 +18,8 @@ $(document).ready(function() {
     .attr("width", width)
     .attr("height", height)
     .append("g")
-    .attr("transform", "translate(-.5,-.5)");
+    .attr("transform", "translate(-.5,-.5)")
+    .classed("griglia",true);
 
   svg.append("rect")
     .attr("class", "background")
