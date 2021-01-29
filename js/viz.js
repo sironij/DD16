@@ -32,7 +32,7 @@ let data_setX = "group";
 
 let y1 = d3.scaleOrdinal()
   .domain(["Group1", "Group2", "Group3", "Group4", "Group5", "Group6", "Group7", "Group8", "Group9"])
-  .range([height/9,height/9*1.5,height/9*3,height/9*4.5,height/9*6,hieght/9*7.5,height,350,300]);
+        .range([100,500,150,450,200,400,250,350,300]); 
 
 var tooltip = d3.select("body").append("div")   
     .attr("class", "tooltip");
